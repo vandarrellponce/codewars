@@ -31,3 +31,45 @@ function likes(names) {
       return `${names[0]}, ${names[1]} and ${names.length - 2} others like this`
   }
 }
+
+/* You have to create a function calcType, which receives 3 arguments: 2 numbers, and the 
+result of an unknown operation performed on them (also a number).Based on those 3 values 
+you have to return a string, that describes which operation was used to get the given result.
+The possible return strings are: "addition", "subtraction", "multiplication", "division". */
+
+function calcType(a, b, res) {
+  switch (res) {
+    case a + b:
+      return 'addition'
+    case a - b:
+      return 'subtraction'
+    case a * b:
+      return 'multiplication'
+    case a / b:
+      return 'division'
+  }
+}
+
+/* In this little assignment you are given a string of space separated numbers, 
+and have to return the highest and lowest number.
+Example:
+highAndLow("1 2 3 4 5");  // return "5 1"
+highAndLow("1 2 -3 4 5"); // return "5 -3"
+highAndLow("1 9 3 4 -5"); // return "9 -5" */
+
+function highAndLow(numbers) {
+  let high = Number.NEGATIVE_INFINITY
+  let low = Number.POSITIVE_INFINITY
+
+  numbers.split(' ').forEach((num) => {
+    if (Number(num) > high) high = num
+    if (Number(num) < low) low = num
+  })
+
+  return `${high} ${low}`
+}
+
+function highAndLow2(numbers) {
+  numbers = numbers.split(' ')
+  return `${Math.max(...numbers)} ${Math.min(...numbers)}`
+}

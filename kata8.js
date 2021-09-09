@@ -9,6 +9,7 @@ a question mark ("?") appends to the end, unless the original string
 ends with a question mark, in which case, returns the original string.
 "Yes" --> "Yes?" 
 "No?" --> "No?" */
+
 function ensureQuestion(s) {
   if (s.includes('?')) return s
   else return `${s}?`
